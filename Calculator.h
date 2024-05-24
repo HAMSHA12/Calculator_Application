@@ -53,12 +53,12 @@ void Calculator<T>::Modulo(int a, int b)
 template<typename T>
 void Calculator<T>::Average(vector<T> a, int n)
 {
-    int r = 0;
+    T r=0;
     for (int i = 0; i < n; i++)
     {
         r += a[i];
     }
-    cout << "\n" << r / n << endl;
+    cout << "\n" << (T)(r / n) << endl;
 }
 
 #endif
