@@ -7,11 +7,41 @@ template<typename T>
 class Calculator
 {
 public:
+    /// <summary>
+    /// To add two numbers
+    /// </summary>
+    /// <param name="a">Number 1</param>
+    /// <param name="b">Number 2</param>
     void Add(T a, T b);
+    /// <summary>
+    /// To subtract two numbers
+    /// </summary>
+    /// <param name="a">Number 1</param>
+    /// <param name="b">Number 2</param>
     void Sub(T a, T b);
+    /// <summary>
+    /// To multiply two numbers
+    /// </summary>
+    /// <param name="a">Number 1</param>
+    /// <param name="b">Number 2</param>
     void Multiply(T a, T b);
+    /// <summary>
+    /// To divide two numbers
+    /// </summary>
+    /// <param name="a">Number 1</param>
+    /// <param name="b">Number 2</param>
     void Divide(T a, T b);
+    /// <summary>
+    /// To get modulo of two numbers
+    /// </summary>
+    /// <param name="a">Number 1</param>
+    /// <param name="b">Number 2</param>
     void Modulo(int a, int b);
+    /// <summary>
+    /// To get the average of n numbers
+    /// </summary>
+    /// <param name="a">Vector of numbers</param>
+    /// <param name="n">Number of numbers that is provided</param>
     void Average(vector<T> a, int n);
 };
 #include <iostream>
