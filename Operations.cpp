@@ -9,9 +9,6 @@ void Start()
     Calculator<float> fcal;
     Calculator<double> dcal;
     int choice, dataType;
-    vector<int> iv;
-    vector<float> fv;
-    vector<double> dv;
     while (true)
     {
         cout << "\nHi this is a Calculator......\nPlease choose an operation to perform......" << endl;
@@ -34,13 +31,13 @@ void Start()
         switch (dataType)
         {
         case 1:
-            Operation<int>(choice, ical, iv);
+            Operation<int>(choice,ical);
             break;
         case 2:
-            Operation<float>(choice, fcal, fv);
+            Operation<float>(choice, fcal);
             break;
         case 3:
-            Operation<double>(choice, dcal, dv);
+            Operation<double>(choice, dcal);
             break;
         }
     }
