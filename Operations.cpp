@@ -19,13 +19,13 @@ void Start()
             cout << "\nExiting Calculator......\nBye!......" << endl;
             break;
         }
-        cout << "\n1.Add\n2.Subtract\n3.Multiply\n4.Divide\n5.Average";
-        if (dataType == 1) cout << "\n6.Modulo" << endl;
-        if (dataType == 1) Validate<int>(choice, 1, 6, true);
+        cout << "\n1.Add\n2.Subtract\n3.Multiply\n4.Divide\n5.Average\n6.SimpleInterest\n7.CompundInterest";
+        if (dataType == 1) cout << "\n8.Factorial\n9.Modulo\n10.IsPowerOfTwo\n11.IsPowerOfFour" << endl;
+        if (dataType == 1) Validate<int>(choice, 1, 11, true);
         else
         {
             cout << endl;
-            Validate<int>(choice, 1, 5, true);
+            Validate<int>(choice, 1, 7, true);
         }
 
         switch (dataType)

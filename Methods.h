@@ -17,7 +17,7 @@ class Calculator;
 /// <param name="b">Upper range if the input should be in a range</param>
 /// <param name="range">If input should be validated on range or not</param>
 template<typename T>
-void Validate(T& c, int a, int b, bool range);
+void Validate(T& c, T a, T b, bool range);
 /// <summary>
 /// To validate user choice of entering again or not
 /// </summary>
@@ -61,6 +61,12 @@ void multiply(T &a, T b);
 /// <param name="b">Second Number</param>
 template<typename T>
 void divide(T &a, T b);
+/// <summary>
+/// To find the factorial of a number
+/// </summary>
+/// <param name="n">The number</param>
+/// <returns>Factorial of it</returns>
+int Fact(int n);
 /// <summary>
 /// To make the required operation needed to be performed
 /// </summary>

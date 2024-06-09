@@ -3,7 +3,6 @@ template<typename T>
 void add(T& a, T b)
 {
     a = a + b;
-    cout << "\nAddding............";
 }
 
 template<typename T>
@@ -23,6 +22,12 @@ void divide(T& a, T b)
 {
     if (b != 0) a = a / b;
     else cout << "\nCannot divide by zero!....." << endl;
+}
+
+int Fact(int n)
+{
+    if (n == 1) return 1;
+    else return n * Fact(n - 1);
 }
 
 template<typename T>
@@ -62,12 +67,50 @@ void Operation(int c, Calculator<T>& cal)
         else cal.Average(false);
         break;
     case 6:
-        int a, b;
+        double p, n, r;
+        cout << "\nEnter the principal amount : ";
+        Validate<double>(p, 0, DBL_MAX, true);
+        cout << "\nEnter the rate of interest : ";
+        Validate<double>(r, 0, DBL_MAX, true);
+        cout << "\nEnter the number of years : ";
+        Validate<double>(n, 0, DBL_MAX, true);
+        Calculator<double> dcal;
+        dcal.SimpleInterest(p, r, n);
+        break;
+    case 7:
+        cout << "\nEnter the principal amount : ";
+        Validate<double>(p, 0, DBL_MAX, true);
+        cout << "\nEnter the rate of interest : ";
+        Validate<double>(r, 0, DBL_MAX, true);
+        cout << "\nEnter the number of years : ";
+        Validate<double>(n, 0, DBL_MAX, true);
+        dcal.CompoundInterest(p, r, n);
+        break;
+    case 8:
         Calculator<int> ical;
+        {
+            int n;
+            cout << "\nEnter the number....." << endl;
+            Validate<int>(n, 1, INT_MAX, true);
+            ical.Factorial(n);
+            break;
+        }
+    case 9:
+        int a, b;
         cout << "\nEnter two numbers....." << endl;
         Validate<int>(a, 0, 0, false);
         Validate<int>(b, 0, 0, false);
         ical.Modulo(a, b);
+        break;
+    case 10:        
+        cout << "\nEnter the number : ";
+        Validate<int>(a, 1, INT_MAX, true);
+        cout<<"\n"<<a << " is " << ((ical.IsPower2(a)) ? "" : "not") << " a power of two" << endl;
+        break;
+    case 11:        
+        cout << "\nEnter the number : ";
+        Validate<int>(a, 1, INT_MAX, true);
+        cout << "\n" << a << " is " << ((ical.IsPower4(a)) ? "" : "not") << " a power of four" << endl;
         break;
     default:
         break;
@@ -104,7 +147,7 @@ T Calculate(func<T> fun, int& n, bool isExactSize)
             Validate(exit);
             if (toupper(exit) == 'N') break;
             cout << "\nEnter number " << i << " : ";
-            Validate(number, 0, 0, false);
+            Validate<T>(number, 0, 0, false);
             fun(r, number);
         }
         n = i;
@@ -113,7 +156,7 @@ T Calculate(func<T> fun, int& n, bool isExactSize)
 }
 
 template<typename T>
-void Validate(T& c, int a, int b, bool range)
+void Validate(T& c, T a, T b, bool range)
 {
     while (true)
     {
